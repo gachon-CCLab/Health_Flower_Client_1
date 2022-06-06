@@ -3,7 +3,6 @@
 import os
 
 import tensorflow as tf
-import tensorflow_addons as tfa
 
 import flwr as fl
 
@@ -24,14 +23,12 @@ import wandb
 from datetime import datetime
 
 from urllib.request import urlopen
-from urllib.error import URLError, HTTPError
 import requests
-from fastapi import FastAPI, BackgroundTasks
+from fastapi import FastAPI
 import asyncio
 import uvicorn
 from pydantic.main import BaseModel
-import logging
-import json
+
 
 
 # Make TensorFlow logs less verbose

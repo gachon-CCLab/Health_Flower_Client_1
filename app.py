@@ -139,6 +139,9 @@ def get_info():
 def main() -> None:
 
     global client_num, status
+    
+    status.FL_server_IP = Server_IP
+    print("server_ip: ", status.FL_server_IP)
 
     # data load
     # 환자별로 partition 분리 => 개별 클라이언트 적용
@@ -171,7 +174,7 @@ def main() -> None:
 
     # Start Flower client
     client = PatientClient(model, x_train, y_train, x_test, y_test)
-    fl.client.start_numpy_client("[::]:8080", client=client)
+    fl.client.start_numpy_client(status.FL_server_IP, client=client)
     
     print('FL server start')
     status.FL_client_start = True

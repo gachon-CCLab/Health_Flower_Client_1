@@ -136,7 +136,7 @@ def get_info():
     return status
 
 @app.get("/start/{Server_IP}")
-def main() -> None:
+async def main(Server_IP : str) -> None:
 
     global client_num, status
     
